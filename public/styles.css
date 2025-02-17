@@ -1,0 +1,182 @@
+/* Import IBM Plex Mono from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+:root {
+    --background: #ffffff;
+    --text: #000000;
+    --accent: #333333;
+    --spacing: 8vw;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'IBM Plex Mono', monospace;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.2;
+    overflow-x: hidden;
+}
+
+.corner-text {
+    position: fixed;
+    font-size: clamp(0.8rem, 2vw, 1.2rem);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 1.5rem;
+    color: var(--accent);
+}
+
+.corner-left {
+    top: 0;
+    left: 1rem;
+    transform-origin: top left;
+}
+
+.corner-right {
+    top: 0;
+    right: 1rem;
+}
+
+.corner-bottom-left {
+    bottom: 0;
+    left: 1rem;
+}
+
+.corner-bottom-right {
+    bottom: 0;
+    right: 1rem;
+    text-align: right;
+}
+
+.corner-text a {
+    color: var(--text);
+    text-decoration: none;
+    border-bottom: 1px solid var(--text);
+    transition: opacity 0.3s ease;
+}
+
+.corner-text a:hover {
+    opacity: 0.7;
+}
+
+.container {
+    padding: var(--spacing);
+}
+
+header {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+h1 {
+    font-size: clamp(3rem, 15vw, 12rem);
+    font-weight: 600;
+    margin-bottom: 2rem;
+    width: 100%;
+    line-height: 0.9;
+}
+
+.subtitle {
+    font-size: clamp(1.5rem, 5vw, 4rem);
+    margin-bottom: 4rem;
+    width: 100%;
+}
+
+.highlight {
+    font-style: italic;
+}
+
+.app-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 4rem;
+    margin: 8rem 0;
+}
+
+.app-card {
+    position: relative;
+    padding: 2rem;
+}
+
+.app-number {
+    position: absolute;
+    top: -2rem;
+    left: 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--accent);
+}
+
+.app-card img {
+    width: 100%;
+    max-width: 128px;
+    height: auto;
+    margin-bottom: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.app-card:hover img {
+    transform: scale(1.02);
+}
+
+.app-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.app-card p {
+    color: var(--accent);
+    margin-bottom: 2rem;
+}
+
+.download-btn {
+    display: inline-block;
+    color: var(--text);
+    text-decoration: none;
+    border-bottom: 1px solid var(--text);
+    padding-bottom: 0.2rem;
+    transition: opacity 0.3s ease;
+}
+
+.download-btn:hover {
+    opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+    :root {
+        --spacing: 5vw;
+    }
+    
+    header {
+        min-height: 60vh;
+    }
+    
+    .corner-text {
+        font-size: 0.7rem;
+    }
+
+    .corner-bottom-left,
+    .corner-bottom-right {
+        padding: 0.5rem;
+    }
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Selection style */
+::selection {
+    background: var(--accent);
+    color: white;
+} 
